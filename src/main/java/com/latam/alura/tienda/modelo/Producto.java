@@ -14,7 +14,6 @@ public class Producto {
     private String descripcion;
     private BigDecimal precio;
 
-
     // Getters and Setters
     public Long getId() {
         return id;
