@@ -16,6 +16,11 @@ public class Categoria {
         this.nombre = nombre;
     }
 
+    // Constructor default
+    public Categoria() {
+
+    }
+
     // Getters and Setters
     public Long getId() {
         return id;

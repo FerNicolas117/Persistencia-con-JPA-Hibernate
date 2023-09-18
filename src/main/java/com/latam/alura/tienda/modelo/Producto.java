@@ -27,6 +27,11 @@ public class Producto {
         this.categoria = categoria;
     }
 
+    // Constructor default
+    public Producto() {
+
+    }
+
     // Getters and Setters
     public Long getId() {
         return id;
