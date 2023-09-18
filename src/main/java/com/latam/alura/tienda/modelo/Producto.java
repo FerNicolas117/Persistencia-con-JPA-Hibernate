@@ -16,7 +16,7 @@ public class Producto {
     private BigDecimal precio;
     private LocalDate fechaDeRegistro = LocalDate.now();
 
-    // Muchos productos tiene una unica categoria
+    // Muchos productos tienen una unica categoria
     @ManyToOne
     private Categoria categoria;
 
