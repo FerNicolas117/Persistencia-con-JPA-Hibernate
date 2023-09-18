@@ -31,5 +31,10 @@ public class RegistroDeProducto {
         System.out.println(celulares.getNombre());
 
         em.flush();
+        em.clear();
+
+        celulares = em.merge(celulares);
+        em.remove(celulares);
+        em.flush();
     }
 }

@@ -19,4 +19,9 @@ public class CategoriaDao {
     public void actualizar(Categoria categoria) {
         this.em.merge(categoria);
     }
+
+    public void remover(Categoria categoria) {
+        categoria = this.em.merge(categoria); // Se garantiza que la entidad se encuentre como Managed
+        this.em.remove(categoria);
+    }
 }
