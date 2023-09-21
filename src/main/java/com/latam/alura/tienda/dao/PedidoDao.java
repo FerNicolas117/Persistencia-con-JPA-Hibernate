@@ -32,18 +32,9 @@ public class PedidoDao {
         return em.createQuery(jpql, Pedido.class).getResultList();
     }
 
-    public List<Pedido> consultaPorNombre(String nombre) {
-        String jpql = "select P from Pedido as P where P.nombre =: nombre";
-        return em.createQuery(jpql, Pedido.class).setParameter("nombre", nombre).getResultList();
-    }
-
-    public List<Pedido> consultaPorNombreDeCategoria(String nombre) {
-        String jpql = "select P from Pedido as P where P.categoria.nombre =: nombre";
-        return em.createQuery(jpql, Pedido.class).setParameter("nombre", nombre).getResultList();
-    }
-
-    public BigDecimal consultarPrecioPorNombreDeProducto(String nombre) {
-        String jpql = "select P.precio from Pedido as P where P.nombre =: nombre";
-        return em.createQuery(jpql, BigDecimal.class).setParameter("nombre", nombre).getSingleResult();
+    // Funcion de agregacion
+    public BigDecimal valorTotalVendido() {
+        String jpql = "select MAX(P.valorTotal) from Pedido P";
+        return em.createQuery(jpql, BigDecimal.class).getSingleResult();
     }
 }
